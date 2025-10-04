@@ -26,17 +26,13 @@
         border-radius: 0.5rem; 
         overflow: hidden; /* Ensures borders/shadow match rounding */
     }
-    /* APPLIED CHANGE: Set width for the first column (Padam) to 18% */
+    
+    /* APPLIED CHANGE: Set width for the first column (Padam) to 15% */
     .sanskrit-analysis-table th:first-child,
     .sanskrit-analysis-table td:first-child {
-        width: 22%; 
+        width: 15%; 
     }
-    .sanskrit-analysis-table td:second-child {
-        width: 22%; 
-    }
-    .sanskrit-analysis-table td:third-child {
-        width: 5%; 
-    }
+
     .sanskrit-analysis-table th, 
     .sanskrit-analysis-table td {
         border: 1px solid #d1d5db;
@@ -133,6 +129,7 @@
             <td>वदिँ अभिवादनस्तुत्योः</td>
             <td>ति</td>
             <td>आत्मनेपदम्, लट्लकारः, उत्तमपुरुषः, एकवचनम्</td>
+            <td>नमामि, Bowdown</td>
         </tr>
         <tr>
             <td>वृन्दावनचरम्</td>
@@ -149,8 +146,8 @@
             <td>One who is beloved by Gopis </td>
         </tr>
       <tr class="highlight-row">
+            <td></td>
             <td>जयन्तीसंभवम्</td>
-            <td>जयन्तीसंभव</td>
             <td>सु</td>
             <td>नपुं २/१</td>
             <td>One who born on Jayanti day (Shravana Ashtami) </td>
@@ -169,8 +166,10 @@
             <td>नपुं २/१</td>
             <td> </td>
         </tr>
+        
+        <!-- Demonstrating an empty 'Padam' cell for analysis continuity -->
         <tr>
-            <td>वैजयन्तीसंभवम्</td> 
+            <td>(समास)</td> 
             <td>जयन्तीसंभव</td>
             <td>-</td>
             <td>One born on Jayanti Tithi</td>
@@ -185,9 +184,33 @@
   <div class="section">
     <!-- Reduced margin to mb-0 -->
     <h3 class="text-xl font-semibold mb-0 text-[#00509e]">क्रियाकारकचिन्तनम्</h3>
-    <p class="text-base">मुख्य क्रिया: **उवाच** (लङ्लकारः, परस्मैपदी, एकवचनम्)。</p>
-    <!-- MODIFIED: Added mb-1 to the last paragraph for minimal separation -->
-    <p class="text-base mb-1">कर्मकारकम् (Object): **वृन्दावनचरम्** (कृष्णम्), **वल्लवीजनवल्लभम्** (कृष्णम्), **जयन्तीसंभवम्** (कृष्णम्), **धाम** (धामन्), **वैजयन्तीविभूषणम्** (कृष्णम्)。</p>
+    <!-- NEW TABLE FOR KARAKA ANALYSIS -->
+    <table class="sanskrit-analysis-table mb-1">
+        <thead>
+            <tr>
+                <th style="width: 30%;">कारकम् (Kāraka Role)</th>
+                <th>विवरणम् (Details)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>**क्रिया (Verb)**</td>
+                <td>वन्दे (वद् धातु, आत्मनेपदम्, लट् लकारः, उत्तमपुरुषः, एकवचनम्)</td>
+            </tr>
+            <tr>
+                <td>**कर्ता (Subject)**</td>
+                <td>अहम् (Implied by verb form, उत्तमपुरुषः)</td>
+            </tr>
+            <tr>
+                <td>**कर्म (Object)**</td>
+                <td>वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, धाम, वैजयन्तीविभूषणम् (all द्वितीया विभक्तिः)</td>
+            </tr>
+            <tr>
+                <td>**आधारः (Location)**</td>
+                <td>वृन्दावने (सप्तमी विभक्तिः, based on the compound 'वृन्दावनचरम्')</td>
+            </tr>
+        </tbody>
+    </table>
   </div>
 
   <!-- MODIFIED: Removed my-1 from the section wrapper -->
@@ -196,7 +219,7 @@
     <h3 class="text-xl font-semibold mb-0 text-[#00509e]">अन्वयकरणम् </h3>
     <!-- MODIFIED: Added mb-1 to the content for minimal separation -->
     <p class="text-base mb-1">अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् (च) धाम वन्दे।</p>
-  </div>
+    </div>
 
   <!-- MODIFIED: Removed my-1 from the section wrapper -->
   <div class="section">
@@ -242,4 +265,3 @@
 
 </body>
 </html>
-
