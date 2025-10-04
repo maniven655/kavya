@@ -1,173 +1,242 @@
 <!DOCTYPE html>
 <html lang="sa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>यादवाभ्युदय-प्रथम-सर्गः</title>
-  <style>
-    body {
-      font-family: 'Noto Sans Devanagari', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #222;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>यादवाभ्युदय-प्रथम-सर्गः</title>
+  
+  <!-- Google Font for Devanagari support -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header, footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      color: #444;
+    }
+    ul li {
+      margin: 0.5rem 0;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    .section {
+      margin: 1.5rem 0;
+    }
+    .section h3 {
+      margin-bottom: 0.5rem;
+      color: #00509e;
+    }
+    a.button {
+      padding: 0.5rem 1rem;
+      background: #00509e;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    
+    /* --- TABLE STYLING ADDED HERE --- */
+    .sanskrit-analysis-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem; 
+        overflow: hidden; /* Ensures borders/shadow match rounding */
     }
-    header, footer {
-      background: #333;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
+
+    .sanskrit-analysis-table th, 
+    .sanskrit-analysis-table td {
+        /* Defines the borders */
+        border: 1px solid #d1d5db;
+        padding: 12px 15px;
+        text-align: left;
+        vertical-align: top;
+        /* CRITICAL: Ensures long text wraps inside the column */
+        word-break: break-word;
     }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #fff;
+
+    /* Style for the Header Row - Using the user's primary blue */
+    .sanskrit-analysis-table thead tr {
+        background-color: #00509e;
+        color: #ffffff; 
+        font-weight: 700;
     }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 2rem; /* Added padding to prevent text from touching margins */
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    /* Alternating Row Colors for readability */
+    .sanskrit-analysis-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
     }
-    h1, h2, h3 {
-      color: #444;
+    .sanskrit-analysis-table tbody tr:nth-child(even) {
+        background-color: #f3f4f6;
     }
-    ul li {
-      margin: 0.5rem 0;
+
+    /* --- Highlighted Row for Coloring (Soft Yellow/Cream) --- */
+    .sanskrit-analysis-table .highlight-row {
+        background-color: #fffacd; 
+        color: #444; 
+        font-weight: 600;
     }
-    .nav-links {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2rem;
+    
+    /* Hover effect */
+    .sanskrit-analysis-table tbody tr:hover {
+        background-color: #e9ecef;
+        transition: background-color 0.2s;
     }
-    .section {
-      margin: 1.5rem 0;
+    .sanskrit-analysis-table .highlight-row:hover {
+        background-color: #fce883; /* Brighter hover for highlight */
     }
-    .section h3 {
-      margin-bottom: 0.5rem;
-      color: #00509e;
-    }
-    a.button {
-      padding: 0.5rem 1rem;
-      background: #00509e;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-  </style>
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>यादवाभ्युदय-प्रथम-सर्गः</h1>
-  <nav>
-    <a href="index.html">मुख्यपृष्ठम्</a>
-  </nav>
+  <h1>यादवाभ्युदय-प्रथम-सर्गः</h1>
+  <nav>
+    <a href="index.html">मुख्यपृष्ठम्</a>
+  </nav>
 </header>
 
 <div class="container">
-  <!-- Example: Shloka Page -->
-  <div class="section">
-    <h3>पदरूपचिन्तनम्</h3>
-    <table class="sanskrit-analysis-table">
-    <thead>
+  <!-- Example: Shloka Page -->
+  <div class="section">
+    <h3>पदरूपचिन्तनम्</h3>
+    <table class="sanskrit-analysis-table">
+    <thead>
+        <tr>
+            <th>पदम् (Padam)</th>
+            <th>प्रातिपदिकम्/धातु (Prātipadikam/Dhātu)</th>
+            <th>सु/ति (Su/Ti Pratyaya)</th>
+            <th>लिङ्गम्, विभक्तिः, वचनम् (Liṅgam, Vibhakti, Vachanam)</th>
+            <th>अर्थः (Meaning)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="highlight-row">
+            <td>वन्दे</td>
+            <td>वदिँ अभिवादनस्तुत्योः</td>
+            <td>ति</td>
+            <td>आत्मनेपदम्, लट्लकारः, उत्तमपुरुषः, एकवचनम्</td> <!-- Added more detail here -->
+            <td>नमामि, I Bow Down</td>
+        </tr>
+        <tr>
+            <td>वृन्दावनचरम्</td>
+            <td>वृन्दावनचर</td>
+            <td>अम्</td> <!-- Changed 'सु' to 'अम्' as it is dvitiya/accusative -->
+            <td>पुंलिङ्गम्, द्वितीया, एकवचनम्</td> <!-- Corrected to agree with word form and verb 'vande' -->
+            <td>One who has habit of roaming in Vrindavanam</td>
+        </tr>
+       <tr>
+            <td>वल्लवीजनवल्लभम्</td>
+            <td>वल्लवीजनवल्लभ</td>
+            <td>अम्</td>
+            <td>पुंलिङ्गम्, द्वितीया, एकवचनम्</td>
+            <td>One who is beloved by Gopis</td>
+        </tr>
+      <tr class="highlight-row"> <!-- Added highlight to this row -->
+            <td>धाम</td>
+            <td>जयन्तीसंभव</td>
+            <td>अम्</td>
+            <td>पुंलिङ्गम्, द्वितीया, एकवचनम्</td>
+            <td>One who was born on Jayanti day (Shravana Ashtami)</td>
+        </tr>
+      <tr>
+            <td>धाम</td>
+            <td>धामन्</td>
+            <td>अम्</td>
+            <td>नपुंसकलिङ्गम्, द्वितीया, एकवचनम्</td>
+            <td>Light, abode, power</td>
+        </tr>
+         <tr>
+            <td>वैजयन्तीविभूषणम्</td>
+            <td>वैजयन्तीविभूषण</td>
+            <td>अम्</td>
+            <td>पुंलिङ्गम्, द्वितीया, एकवचनम्</td>
+            <td>One who is adorned with the Vaijayantī garland</td>
+        </tr>
+        
+        <!-- Demonstrating an empty 'Padam' cell for analysis continuity -->
         <tr>
-            <th>पदम् (Padam)</th>
-            <th>प्रातिपदिकम्/धातु (Prātipadikam/Dhātu)</th>
-            <th>सु/ति (Su/Ti Pratyaya)</th>
-            <th>लिङ्गम्, विभक्तिः, वचनम् (Liṅgam, Vibhakti, Vachanam)</th>
-            <th>अर्थः (Meaning)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="highlight-row">
-            <td>वन्दे</td>
-            <td>वदिँ अभिवादनस्तुत्योः</td>
-            <td>ति</td>
-            <td></td>
-            <td>नमामि, Bowdown</td>
-        </tr>
-        <tr>
-            <td>वृन्दावनचरम्</td>
-            <td>वृन्दावनचर</td>
-            <td>सु</td>
-            <td>नपुं २/१</td>
-            <td>One who has habit of roaming in Vrindavanam </td>
-        </tr>
-       <tr>
-            <td>वल्लवीजनवल्लभम्</td>
-            <td>वल्लवीजनवल्लभ</td>
-            <td>सु</td>
-            <td>नपुं २/१</td>
-            <td>One who is beloved by Gopis </td>
-        </tr>
-      <tr>
-            <td></td>
-            <td>जयन्तीसंभवम्</td>
-            <td>सु</td>
-            <td>नपुं २/१</td>
-            <td>One who born on Jayanti day (Shravana Ashtami) </td>
-        </tr>
-      <tr>
-            <td>धाम</td>
-            <td>धामन्</td>
-            <td>सु</td>
-            <td>नपुं २/१</td>
-            <td>रश्मिः, Light </td>
-        </tr>
-         <tr>
-            <td>वैजयन्तीविभूषणम्</td>
-            <td>वैजयन्तीविभूषण</td>
-            <td>सु</td>
-            <td>नपुं २/१</td>
-            <td> </td>
+            <td>(समास)</td> 
+            <td>जयन्तीसंभव</td>
+            <td>-</td>
+            <td>One born on Jayanti Tithi</td>
+            <td>(Combined with the previous word, meaning 'light' or 'abode')</td>
         </tr>
 
-        </tbody>
+        </tbody>
 </table>
 </div>
 
-  <div class="section">
-    <h3>क्रियाकारकचिन्तनम्</h3>
-    <p>मुख्य क्रिया: उवाच (लङ्लकारः, परस्मैपदी, एकवचनम्)।</p>
-  </div>
+  <div class="section">
+    <h3>क्रियाकारकचिन्तनम्</h3>
+    <p>मुख्य क्रिया: **वन्दे** (लट् लकारः, उत्तमपुरुषः, एकवचनम्)।</p>
+    <p>कर्मकारकम् (Object): **वृन्दावनचरम्** (कृष्णम्), **वल्लवीजनवल्लभम्** (कृष्णम्), **जयन्तीसंभवम्** (कृष्णम्), **धाम** (धामन्), **वैजयन्तीविभूषणम्** (कृष्णम्)।</p>
+  </div>
 
-  <div class="section">
-    <h3>अन्वयकरणम्</h3>
-    <p>धृतराष्ट्रः उवाच — धर्मक्षेत्रे कुरुक्षेत्रे युयुत्सवः समवेताः (किं अकुर्वन्)।</p>
-  </div>
+  <div class="section">
+    <h3>अन्वयकरणम्</h3>
+    <p>अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् (च) धाम वन्दे।</p>
+  </div>
 
-  <div class="section">
-    <h3>अन्यभाषानुवादः</h3>
-    <p>Dhritarashtra said: O Sanjaya, assembled in the holy land of Kurukshetra and desiring battle, what did my sons and the sons of Pandu do?</p>
-  </div>
+  <div class="section">
+    <h3>अन्यभाषानुवादः</h3>
+    <p>I bow down to (Lord Krishna), who roams in Vrindavana, who is the beloved of the Gopis, who was born on the auspicious Jayanti day, and who is adorned with the Vaijayantī garland, the supreme light/abode.</p>
+  </div>
 
-  <div class="section">
-    <h3>सन्धिविवरणम्</h3>
-    <p>धर्मक्षेत्रे = धर्म + क्षेत्रे।</p>
-  </div>
+  <div class="section">
+    <h3>सन्धिविवरणम्</h3>
+    <p>वल्लवीजनवल्लभम् = वल्लवीजन + वल्लभम् (No Sandhi, it is a compound).</p>
+  </div>
 
-  <div class="section">
-    <h3>समासविवरणम्</h3>
-    <p>धर्मक्षेत्रे = तत्पुरुषः।</p>
-  </div>
+  <div class="section">
+    <h3>समासविवरणम्</h3>
+    <p>वृन्दावनचरम् = वृन्दावने चरति इति (उपपद तत्पुरुषः)।</p>
+    <p>वल्लवीजनवल्लभम् = वल्लवीजनानां वल्लभः (षष्ठी तत्पुरुषः)।</p>
+    <p>वैजयन्तीविभूषणम् = वैजयन्त्या विभूषणम् यस्य सः (बहुव्रीहिः)।</p>
+  </div>
 
-  <div class="nav-links">
-    <a class="button" href="shloka0.html">⏪ पूर्वश्लोकः</a>
-    <a class="button" href="shloka2.html">परश्लोकः ⏩</a>
-  </div>
+  <div class="nav-links">
+    <a class="button" href="shloka0.html">⏪ पूर्वश्लोकः</a>
+    <a class="button" href="shloka2.html">परश्लोकः ⏩</a>
+  </div>
 
-  <div class="nav-links">
-    <a class="button" href="../index.html">⬅️ अध्यायसूची</a>
-    <a class="button" href="index.html">⬅️ अध्याय १</a>
-  </div>
+  <div class="nav-links">
+    <a class="button" href="../index.html">⬅️ अध्यायसूची</a>
+    <a class="button" href="index.html">⬅️ अध्याय १</a>
+  </div>
 
 </div>
 
 <footer>
-  <p>© 2025 यादवाभ्युदय-प्रथम-सर्गः</p>
+  <p>© 2025 यादवाभ्युदय-प्रथम-सर्गः</p>
 </footer>
 
 </body>
