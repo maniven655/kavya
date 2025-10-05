@@ -1,9 +1,9 @@
-
+<!DOCTYPE html>
 <html lang="sa">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>यादवाभ्युदय-प्रथम-सर्गः</title>
+  <title>यादवाभ्युदय-प्रथम-सर्गः - श्लोकसूची</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -12,252 +12,42 @@
   <style>
     body {
       font-family: 'Noto Sans Devanagari', sans-serif;
+      background: #f9f9f9;
     }
-    /* Keeping only the essential custom and table-specific styles */
-    
-    /* --- TABLE STYLING --- */
-    .sanskrit-analysis-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.95rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 0.5rem; 
-        overflow: hidden; /* Ensures borders/shadow match rounding */
-    }
-    
-    /* APPLIED CHANGE: Set width for the first column (Padam) to 15% */
-    .sanskrit-analysis-table th:first-child,
-    .sanskrit-analysis-table td:first-child {
-        width: 15%; 
-    }
-
-    .sanskrit-analysis-table th, 
-    .sanskrit-analysis-table td {
-        border: 1px solid #d1d5db;
-        padding: 12px 15px;
-        text-align: left;
-        vertical-align: top;
-        word-break: break-word; /* CRITICAL: Ensures long text wraps */
-    }
-
-    /* Header Row (using primary blue from old .section h3) */
-    .sanskrit-analysis-table thead tr {
-        background-color: #00509e;
-        color: #ffffff; 
-        font-weight: 700;
-    }
-
-    /* Alternating Row Colors */
-    .sanskrit-analysis-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-    .sanskrit-analysis-table tbody tr:nth-child(even) {
-        background-color: #f3f4f6;
-    }
-
-    /* Highlighted Row */
-    .sanskrit-analysis-table .highlight-row {
-        background-color: #fffacd; 
-        color: #444; 
-        font-weight: 600;
-    }
-    
-    /* Hover effects */
-    .sanskrit-analysis-table tbody tr:hover {
-        background-color: #e9ecef;
-        transition: background-color 0.2s;
-    }
-    .sanskrit-analysis-table .highlight-row:hover {
-        background-color: #fce883; /* Brighter hover for highlight */
-    }
-    /* Keeping the custom background for the page */
-    .bg-f9f9f9 {
-        background: #f9f9f9;
+    .shloka-list a {
+        transition: background-color 0.2s, color 0.2s;
     }
   </style>
 </head>
-<body class="bg-f9f9f9 text-gray-800">
+<body class="text-gray-800">
 
-<header class="bg-[#333] text-white text-center p-4">
-  <h1 class="text-2xl font-bold">यादवाभ्युदय-प्रथम-सर्गः</h1>
-  <nav class="pt-2">
-    <a href="index.html" class="mx-4 text-white hover:text-gray-300 no-underline">मुख्यपृष्ठम्</a>
-  </nav>
+<header class="bg-[#333] text-white text-center p-4 shadow-md">
+  <h1 class="text-3xl font-bold">यादवाभ्युदय-प्रथम-सर्गः</h1>
 </header>
 
-<div class="container max-w-4xl mx-auto my-8 p-8 bg-white rounded-xl shadow-lg">
-
-    <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">सर्गः १ – श्लोकः १</h2>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">श्लोकः</h3>
-        <p class="text-lg mb-4 p-4 bg-gray-100 rounded-lg">वन्दे वृन्धावनचरं वल्लवीजनवल्लभम् । <br> जयन्तीसंभवं धाम वैजयन्तीविभूषणम् ।।</p>
-    </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">पदच्छेदः</h3>
-        <p class="text-base mb-4">वन्दे । वृन्दावनचरम् । वल्लवीजनवल्लभम् । जयन्तीसम्भवम् । धाम । वैजयन्तीविभूषणम् ।</p>
-    </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">पदरूपचिन्तनम्</h3>
-        <table class="sanskrit-analysis-table mb-4">
-            <thead>
-                <tr>
-                    <th>पदम् (Padam)</th>
-                    <th>प्रातिपदिकम्/धातु (Prātipadikam/Dhātu)</th>
-                    <th>सु/ति (Su/Ti Pratyaya)</th>
-                    <th>लिङ्गम्, विभक्तिः, वचनम् (Liṅgam, Vibhakti, Vachanam)</th>
-                    <th>अर्थः (Meaning)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="highlight-row">
-                    <td>वन्दे</td>
-                    <td>वदिँ अभिवादनस्तुत्योः</td>
-                    <td>ति</td>
-                    <td>आत्मनेपदम्, लट्लकारः, उत्तमपुरुषः, एकवचनम्</td>
-                    <td>नमामि, I bow down</td>
-                </tr>
-                <tr>
-                    <td>वृन्दावनचरम्</td>
-                    <td>वृन्दावनचर</td>
-                    <td>सु</td>
-                    <td>नपुं २/१</td>
-                    <td>One who roams in Vrindavan</td>
-                </tr>
-               <tr>
-                    <td>वल्लवीजनवल्लभम्</td>
-                    <td>वल्लवीजनवल्लभ</td>
-                    <td>सु</td>
-                    <td>नपुं २/१</td>
-                    <td>One who is beloved by the Gopis</td>
-                </tr>
-              <tr>
-                    <td>जयन्तीसंभवम्</td>
-                    <td>जयन्तीसंभव</td>
-                    <td>सु</td>
-                    <td>नपुं २/१</td>
-                    <td>One who was born on Jayanti day (Shravana Ashtami)</td>
-                </tr>
-              <tr>
-                    <td>धाम</td>
-                    <td>धामन्</td>
-                    <td>सु</td>
-                    <td>नपुं २/१</td>
-                    <td>रश्मिः, The supreme light/abode</td>
-                </tr>
-                 <tr>
-                    <td>वैजयन्तीविभूषणम्</td>
-                    <td>वैजयन्तीविभूषण</td>
-                    <td>सु</td>
-                    <td>नपुं २/१</td>
-                    <td>One who is adorned with the Vaijayantī garland</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">क्रियाकारकचिन्तनम्</h3>
-        <table class="sanskrit-analysis-table mb-4">
-            <!-- As requested, the table header is removed -->
-            <tbody>
-                <tr>
-                    <td class="font-semibold">क्रियापदम्</td>
-                    <td colspan="2">वन्दे (वदिँ अभिवादनस्तुत्योः, आत्मनेपदम्, लट् लकारः, उत्तमपुरुषः, एकवचनम्)</td>
-                </tr>
-                <tr>
-                    <td class="font-semibold">अभिहितः</td>
-                    <td>कर्ता</td>
-                    <td>प्रथमाविभक्तिः/एकवचनम्</td>
-                </tr>
-                <tr>
-                    <td class="font-semibold">अनभिहितः</td>
-                    <td>कर्मकारकम्</td>
-                    <td>द्वितीयाविभक्तिः</td>
-                </tr>
-                <tr>
-                    <td class="font-semibold">कर्ता</td>
-                    <td>(अस्मद्)</td>
-                    <td>(अहम्)</td>
-                </tr>
-                <tr>
-                    <td class="font-semibold">कर्म</td>
-                    <td>धामन्</td>
-                    <td>धाम</td>
-                </tr>
-                <tr>
-                    <td class="font-semibold">कर्मविशेषणम्</td>
-                    <td>वृन्दावनचर, वल्लवीजनवल्लभ, जयन्तीसंभव, वैजयन्तीविभूषण</td>
-                    <td>वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम्</td>
-                </tr>
-                <tr>
-                    <td class="font-semibold">अंशान्वयम्</td>
-                    <td colspan="2">अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् धाम वन्दे।</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">अन्वयः</h3>
-        <p class="text-base mb-4">अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् (च) धाम वन्दे।</p>
-    </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">अन्यभाषानुवादः</h3>
-        <p class="text-base mb-4">I bow down to the supreme light/abode (Lord Krishna), who roams in Vrindavana, who is the beloved of the Gopis, who was born on the auspicious Jayanti day, and who is adorned with the Vaijayantī garland.</p>
-    </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">सन्धिविवरणम्</h3>
-        <ul class="list-disc ml-6 text-base mb-4">
-            <li>वृन्दावनचरं वल्लवीजनवल्लभम् → वृन्दावनचरम् + वल्लवीजनवल्लभम् (मोऽनुस्वारः)</li>
-            <li>जयन्तीसंभवं धाम → जयन्तीसंभवम् + धाम (मोऽनुस्वारः)</li>
+<div class="container max-w-2xl mx-auto my-10 p-8 bg-white rounded-xl shadow-lg">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6 border-b pb-3 text-center">श्लोकसूची</h2>
+    <div class="shloka-list">
+        <ul class="space-y-3">
+            <li>
+                <a href="Shloka1.html" class="block w-full text-left px-6 py-4 bg-gray-50 hover:bg-[#00509e] hover:text-white rounded-lg border border-gray-200 font-semibold text-lg">
+                    श्लोकः १
+                </a>
+            </li>
+            <!-- To add a new shloka, copy the list item block above and change the href and text. -->
+            <!-- Example for Shloka 2:
+            <li>
+                <a href="Shloka2.html" class="block w-full text-left px-6 py-4 bg-gray-50 hover:bg-[#00509e] hover:text-white rounded-lg border border-gray-200 font-semibold text-lg">
+                    श्लोकः २
+                </a>
+            </li>
+            -->
         </ul>
     </div>
-
-    <div class="section">
-        <h3 class="text-xl font-semibold mb-2 text-[#00509e]">समासविवरणम्</h3>
-        <ul class="list-disc ml-6 text-base mb-4">
-            <li><b>वृन्दावनचरम्</b>
-                <ul class="list-circle ml-6">
-                    <li>वृन्दावने चरति इति। (One who roams in Vrindavan)</li>
-                    <li><i>उपपदतत्पुरुषः</i></li>
-                </ul>
-            </li>
-            <li><b>वल्लवीजनवल्लभम्</b>
-                <ul class="list-circle ml-6">
-                    <li>वल्लव्यः एव जनाः, तेषाम्। (Of the Gopis)</li>
-                    <li>वल्लवीजनानां वल्लभः। (Beloved of the Gopis)</li>
-                    <li><i>षष्ठीतत्पुरुषः</i></li>
-                </ul>
-            </li>
-            <li><b>जयन्तीसंभवम्</b>
-                <ul class="list-circle ml-6">
-                    <li>जयन्त्यां संभवः यस्य सः। (He whose birth was on Jayanti)</li>
-                    <li><i>बहुव्रीहिः</i></li>
-                </ul>
-            </li>
-            <li><b>वैजयन्तीविभूषणम्</b>
-                <ul class="list-circle ml-6">
-                    <li>वैजयन्ती विभूषणं यस्य सः। (He whose ornament is the Vaijayantī garland)</li>
-                    <li><i>बहुव्रीहिः</i></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-  <div class="nav-links flex justify-between mt-8">
-    <a class="button px-4 py-2 bg-gray-300 text-gray-500 rounded-md no-underline cursor-not-allowed">⏪ पूर्वश्लोकः</a>
-    <a class="button px-4 py-2 bg-[#00509e] text-white rounded-md no-underline hover:bg-blue-700 transition duration-150" href="#">परश्लोकः ⏩</a>
-  </div>
-
 </div>
 
 <footer class="bg-[#333] text-white text-center p-4 mt-8">
-  <p class="text-sm">© 2025 यादवाभ्युदय-प्रथम-सर्ग-प्रथम-शलोकः</p>
+  <p class="text-sm">© 2025 यादवाभ्युदय</p>
 </footer>
 
 </body>
