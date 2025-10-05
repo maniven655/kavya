@@ -1,81 +1,87 @@
+Yes, I can certainly update the सन्धिविवरणम् and समासविवरणम् sections to use bullet points for a cleaner, more organized presentation.
+
+In the समासविवरणम् section, I'll also fix the incomplete <ul> tag: <ul> वल्लवी जनः वल्लवीजनः (संभावनापूर्वपदर्मधारय)/ul> to <ul> वल्लवी जनः वल्लवीजनः (संभावनापूर्वपदकर्मधारय)</ul> and properly nest the sub-bullets for better hierarchy.
+
+Here is the updated HTML code:
+
+HTML
+
 <!DOCTYPE html>
 <html lang="sa">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>यादवाभ्युदय-प्रथम-सर्गः</title>
-  
-  <!-- Load Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Font for Devanagari support -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap">
-  
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap">
+  
   <style>
     body {
       font-family: 'Noto Sans Devanagari', sans-serif;
     }
-    /* Keeping only the essential custom and table-specific styles */
-    
-    /* --- TABLE STYLING --- */
-    .sanskrit-analysis-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.95rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 0.5rem; 
-        overflow: hidden; /* Ensures borders/shadow match rounding */
-    }
-    
-    /* APPLIED CHANGE: Set width for the first column (Padam) to 15% */
-    .sanskrit-analysis-table th:first-child,
-    .sanskrit-analysis-table td:first-child {
-        width: 15%; 
-    }
+    /* Keeping only the essential custom and table-specific styles */
+    
+    /* --- TABLE STYLING --- */
+    .sanskrit-analysis-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem; 
+        overflow: hidden; /* Ensures borders/shadow match rounding */
+    }
+    
+    /* APPLIED CHANGE: Set width for the first column (Padam) to 15% */
+    .sanskrit-analysis-table th:first-child,
+    .sanskrit-analysis-table td:first-child {
+        width: 15%; 
+    }
 
-    .sanskrit-analysis-table th, 
-    .sanskrit-analysis-table td {
-        border: 1px solid #d1d5db;
-        padding: 12px 15px;
-        text-align: left;
-        vertical-align: top;
-        word-break: break-word; /* CRITICAL: Ensures long text wraps */
-    }
+    .sanskrit-analysis-table th, 
+    .sanskrit-analysis-table td {
+        border: 1px solid #d1d5db;
+        padding: 12px 15px;
+        text-align: left;
+        vertical-align: top;
+        word-break: break-word; /* CRITICAL: Ensures long text wraps */
+    }
 
-    /* Header Row (using primary blue from old .section h3) */
-    .sanskrit-analysis-table thead tr {
-        background-color: #00509e;
-        color: #ffffff; 
-        font-weight: 700;
-    }
+    /* Header Row (using primary blue from old .section h3) */
+    .sanskrit-analysis-table thead tr {
+        background-color: #00509e;
+        color: #ffffff; 
+        font-weight: 700;
+    }
 
-    /* Alternating Row Colors */
-    .sanskrit-analysis-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-    .sanskrit-analysis-table tbody tr:nth-child(even) {
-        background-color: #f3f4f6;
-    }
+    /* Alternating Row Colors */
+    .sanskrit-analysis-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+    .sanskrit-analysis-table tbody tr:nth-child(even) {
+        background-color: #f3f4f6;
+    }
 
-    /* Highlighted Row */
-    .sanskrit-analysis-table .highlight-row {
-        background-color: #fffacd; 
-        color: #444; 
-        font-weight: 600;
-    }
-    
-    /* Hover effects */
-    .sanskrit-analysis-table tbody tr:hover {
-        background-color: #e9ecef;
-        transition: background-color 0.2s;
-    }
-    .sanskrit-analysis-table .highlight-row:hover {
-        background-color: #fce883; /* Brighter hover for highlight */
-    }
-    /* Keeping the custom background for the page */
-    .bg-f9f9f9 {
-        background: #f9f9f9;
-    }
+    /* Highlighted Row */
+    .sanskrit-analysis-table .highlight-row {
+        background-color: #fffacd; 
+        color: #444; 
+        font-weight: 600;
+    }
+    
+    /* Hover effects */
+    .sanskrit-analysis-table tbody tr:hover {
+        background-color: #e9ecef;
+        transition: background-color 0.2s;
+    }
+    .sanskrit-analysis-table .highlight-row:hover {
+        background-color: #fce883; /* Brighter hover for highlight */
+    }
+    /* Keeping the custom background for the page */
+    .bg-f9f9f9 {
+        background: #f9f9f9;
+    }
   </style>
 </head>
 <body class="bg-f9f9f9 text-gray-800">
@@ -89,31 +95,21 @@
 
 <div class="container max-w-3xl mx-auto my-8 p-8 bg-white rounded-xl shadow-lg">
 
-  <!-- Example: Shloka Page -->
-  <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">सर्गः १ – श्लोकः १</h2>
+    <h2 class="text-2xl font-semibold text-gray-700 mb-4 border-b pb-2">सर्गः १ – श्लोकः १</h2>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">श्लोका-१</h3>
-    <!-- MODIFIED: Added mb-1 to the content for minimal separation -->
-    <p class="text-lg mb-1">वन्दे वृन्धावनचरं वल्लवीजनवल्लभम् । <br> जयन्तीसंभवं धाम  वैजयन्तीविभूषणम् ।।</p>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">श्लोका-१</h3>
+        <p class="text-lg mb-1">वन्दे वृन्धावनचरं वल्लवीजनवल्लभम् । <br> जयन्तीसंभवं धाम  वैजयन्तीविभूषणम् ।।</p>
   </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">पदच्छेदः</h3>
-    <!-- MODIFIED: Added mb-1 to the content for minimal separation -->
-    <p class="text-base mb-1">वन्दे । वृन्दावनचरम् । वल्लवीजनवल्लभम् । जयन्तीसम्भवम् ।  धाम ।  वैजयन्तीविभूषणम् ।</p>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">पदच्छेदः</h3>
+        <p class="text-base mb-1">वन्दे । वृन्दावनचरम् । वल्लवीजनवल्लभम् । जयन्तीसम्भवम् ।  धाम ।  वैजयन्तीविभूषणम् ।</p>
   </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- MODIFIED: Margin is mb-0 to remove ALL vertical space before the table -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">पदरूपचिन्तनम्</h3>
-    <!-- MODIFIED: Added mb-1 to the table element for minimal separation -->
-    <table class="sanskrit-analysis-table mb-1">
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">पदरूपचिन्तनम्</h3>
+        <table class="sanskrit-analysis-table mb-1">
     <thead>
         <tr>
             <th>पदम् (Padam)</th>
@@ -166,10 +162,9 @@
             <td>नपुं २/१</td>
             <td> </td>
         </tr>
-        
-        <!-- Demonstrating an empty 'Padam' cell for analysis continuity -->
-        <tr>
-            <td>(समास)</td> 
+        
+                <tr>
+            <td>(समास)</td> 
             <td>जयन्तीसंभव</td>
             <td>-</td>
             <td>One born on Jayanti Tithi</td>
@@ -180,99 +175,98 @@
 </table>
 </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">क्रियाकारकचिन्तनम्</h3>
-    <!-- NEW TABLE FOR KARAKA ANALYSIS -->
-    <table class="sanskrit-analysis-table mb-1">
-        <thead>
-            <tr>
-                <th style="width: 30%;"> </th>
-                <th style="width: 30%;"> </th>
-                <th>विवरणम् (Details)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>**क्रियापदम्</td>
-                <td>वन्दे (वदिँ अभिवादनस्तुत्योः, आत्मनेपदम्, लट् लकारः, उत्तमपुरुषः, एकवचनम्)</td>
-            </tr>
-            <tr>
-                <td>अभिहितः</td>
-                <td>कर्ता</td>
-                <td> प्रथमाविभक्तिः/एकवचनम्</td>
-            </tr>
-            <tr>
-                <td>अनभिहितः</td>
-                <td>कर्मकारकम्</td>
-                <td> द्वितीयाविभक्तिः</td>
-            </tr>
-            <tr>
-                <td>कर्ता</td>
-                <td>(अस्मद्)</td>
-                <td>(अहम्)</td>
-            </tr>
-            <tr>
-                <td>कर्म</td>
-                <td>धामन्</td>
-                <td>धाम</td>
-            </tr>
-            <tr>
-                <td>कर्मविशेषणम्</td>
-                <td>वृन्दावनचर, वल्लवीजनवल्लभ, जयन्तीसंभव, वैजयन्तीविभूषण</td>
-                <td>वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् </td>
-            </tr>
-            tr>
-                <td>अंशान्वयम्</td>
-                <td>अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् धाम वन्दे</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">क्रियाकारकचिन्तनम्</h3>
+        <table class="sanskrit-analysis-table mb-1">
+        <thead>
+            <tr>
+                <th style="width: 30%;"> </th>
+                <th style="width: 30%;"> </th>
+                <th>विवरणम् (Details)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>**क्रियापदम्</td>
+                <td>वन्दे (वदिँ अभिवादनस्तुत्योः, आत्मनेपदम्, लट् लकारः, उत्तमपुरुषः, एकवचनम्)</td>
+            </tr>
+            <tr>
+                <td>अभिहितः</td>
+                <td>कर्ता</td>
+                <td> प्रथमाविभक्तिः/एकवचनम्</td>
+            </tr>
+            <tr>
+                <td>अनभिहितः</td>
+                <td>कर्मकारकम्</td>
+                <td> द्वितीयाविभक्तिः</td>
+            </tr>
+            <tr>
+                <td>कर्ता</td>
+                <td>(अस्मद्)</td>
+                <td>(अहम्)</td>
+            </tr>
+            <tr>
+                <td>कर्म</td>
+                <td>धामन्</td>
+                <td>धाम</td>
+            </tr>
+            <tr>
+                <td>कर्मविशेषणम्</td>
+                <td>वृन्दावनचर, वल्लवीजनवल्लभ, जयन्तीसंभव, वैजयन्तीविभूषण</td>
+                <td>वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् </td>
+            </tr>
+            <tr>
+                <td>अंशान्वयम्</td>
+                <td>अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् धाम वन्दे</td>
+            </tr>
+        </tbody>
+    </table>
   </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">अन्वयकरणम् </h3>
-    <!-- MODIFIED: Added mb-1 to the content for minimal separation -->
-    <p class="text-base mb-1">अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् (च) धाम वन्दे।</p>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">अन्वयकरणम् </h3>
+        <p class="text-base mb-1">अहं वृन्दावनचरम्, वल्लवीजनवल्लभम्, जयन्तीसंभवम्, वैजयन्तीविभूषणम् (च) धाम वन्दे।</p>
     </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">अन्यभाषानुवादः</h3>
-    <!-- MODIFIED: Added mb-1 to the content for minimal separation -->
-    <p class="text-base mb-1">I bow down to (Lord Krishna), who roams in Vrindavana, who is the beloved of the Gopis, who was born on the auspicious Jayanti day, and who is adorned with the Vaijayantī garland, the supreme light/abode.</p>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">अन्यभाषानुवादः</h3>
+        <p class="text-base mb-1">I bow down to (Lord Krishna), who roams in Vrindavana, who is the beloved of the Gopis, who was born on the auspicious Jayanti day, and who is adorned with the Vaijayantī garland, the supreme light/abode.</p>
     </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">सन्धिविवरणम्</h3>
-    <!-- MODIFIED: Added mb-1 to the content for minimal separation -->
-    <p class="text-base mb-1">वृन्दावनचरं वल्लवीजनवल्लभम् (मोऽनुस्वारः)。</p>
-    <p class="text-base mb-1">जयन्तीसम्भवं धाम (मोऽनुस्वारः)。</p>
-    </div>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">सन्धिविवरणम्</h3>
+    <ul class="list-disc ml-6 text-base mb-1">
+      <li>वृन्दावनचरं वल्लवीजनवल्लभम् (मोऽनुस्वारः)</li>
+      <li>जयन्तीसम्भवं धाम (मोऽनुस्वारः)</li>
+    </ul>
+  </div>
 
-  <!-- MODIFIED: Removed my-1 from the section wrapper -->
-  <div class="section">
-    <!-- Reduced margin to mb-0 -->
-    <h3 class="text-xl font-semibold mb-0 text-[#00509e]">समासविवरणम्</h3>
-    <p class="text-base">वृन्दावनचरम्
-      <ul> बृन्दावनम् इति वनविशेषम्</ul>
-      <ul> वृन्दावने चरति इति वृन्दावनचरम् (उपपदसमासः)</ul>
-    </p>
-    <p class="text-base">वल्लवीजनवल्लभम्
-    <ul> वल्लवी जनः वल्लवीजनः (संभावनापूर्वपदर्मधारय)/ul>
-    <ul> वल्लवीजनानां वल्लभः वल्लवीजनवल्लभः तम् वल्लवीजनवल्लभम् (षष्ठीतत्पुरुषः)</ul>
-    </p>
-     <p class="text-base mb-1"">जयन्तीसंभवम् यन्त्याः संभवः जयन्तीसंभवः तम् जयन्तिसंभवम्  (तत्पुरुषः assuming कर्तरि अप्, else Bahuvreehi with यस्य/ul>
-    </p>  
-      
-    <!-- MODIFIED: Added mb-1 to the last paragraph for minimal separation -->
-    <p class="text-base mb-1">वैजयन्तीविभूषणम् = वैजयन्त्या विभूषणम् यस्य सः (बहुव्रीहिः)。</p>
+    <div class="section">
+        <h3 class="text-xl font-semibold mb-0 text-[#00509e]">समासविवरणम्</h3>
+    <ul class="list-disc ml-6 text-base mb-1">
+      <li>वृन्दावनचरम्
+        <ul class="list-circle ml-6">
+          <li>बृन्दावनम् इति वनविशेषम्</li>
+          <li>वृन्दावने चरति इति वृन्दावनचरम् (उपपदसमासः)</li>
+        </ul>
+      </li>
+      <li>वल्लवीजनवल्लभम्
+        <ul class="list-circle ml-6">
+          <li>वल्लवी जनः वल्लवीजनः (संभावनापूर्वपदकर्मधारय)</li>
+          <li>वल्लवीजनानां वल्लभः वल्लवीजनवल्लभः तम् वल्लवीजनवल्लभम् (षष्ठीतत्पुरुषः)</li>
+        </ul>
+      </li>
+      <li>जयन्तीसंभवम्
+        <ul class="list-circle ml-6">
+          <li>जयन्त्याः संभवः जयन्तीसंभवः तम् जयन्तिसंभवम् (तत्पुरुषः assuming कर्तरि अप्, else Bahuvreehi with यस्य)</li>
+        </ul>
+      </li>
+      <li>वैजयन्तीविभूषणम्
+        <ul class="list-circle ml-6">
+          <li>वैजयन्त्या विभूषणम् यस्य सः (बहुव्रीहिः)</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
   <div class="nav-links flex justify-between mt-8">
