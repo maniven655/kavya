@@ -11,15 +11,18 @@
   
   <style>
     body {
-      /* Apply the font globally */
       font-family: 'Noto Sans Devanagari', sans-serif;
       background: #f9f9f9;
     }
-    
-    /* Custom utility class for the hover effect */
     .hover-custom:hover {
         background-color: #00509e;
         color: #ffffff;
+    }
+    /* Style for the group headings */
+    .shloka-group-title {
+        @apply text-lg font-semibold text-gray-600 mt-8 mb-3 pb-2 border-b;
+        /* This applies tailwind classes using @apply, 
+           but you could also write raw CSS */
     }
   </style>
 </head>
@@ -30,43 +33,42 @@
 </header>
 
 <div class="container max-w-4xl mx-auto my-10 p-8 bg-white rounded-xl shadow-lg">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-8 border-b pb-4 text-center">श्लोकसूची</h2>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-6 border-b pb-4 text-center">श्लोकसूची</h2>
     
+    <h3 class="shloka-group-title">श्लोकाः १ - १०</h3>
     <div class="shloka-grid grid grid-cols-5 md:grid-cols-10 gap-3">
-        
-        <a href="shloka1.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१</a>
-        <a href="shloka2.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">२</a>
-        <a href="shloka3.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">३</a>
-        <a href="shloka4.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">४</a>
-        <a href="shloka5.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">५</a>
-        <a href="shloka6.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">६</a>
-        <a href="shloka7.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">७</a>
-        <a href="shloka8.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">८</a>
-        <a href="shloka9.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९</a>
-        <a href="shloka10.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१०</a>
-        
-        <a href="shloka11.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">११</a>
-        <a href="shloka12.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१२</a>
-        <a href="shloka13.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१३</a>
-        <a href="shloka14.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१४</a>
-        <a href="shloka15.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१५</a>
-        <a href="shloka16.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१६</a>
-        <a href="shloka17.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१७</a>
-        <a href="shloka18.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१८</a>
-        <a href="shloka19.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१९</a>
-        <a href="shloka20.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">२०</a>
-
-        <a href="shloka91.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९१</a>
-        <a href="shloka92.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९२</a>
-        <a href="shloka93.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९३</a>
-        <a href="shloka94.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९४</a>
-        <a href="shloka95.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९५</a>
-        <a href="shloka96.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९६</a>
-        <a href="shloka97.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९७</a>
-        <a href="shloka98.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९८</a>
-        <a href="shloka99.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९९</a>
-        <a href="shloka100.html" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१००</a>
+        <a href="shloka1.html" aria-label="श्लोकः १" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१</a>
+        <a href="shloka2.html" aria-label="श्लोकः २" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">२</a>
+        <a href="shloka3.html" aria-label="श्लोकः ३" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">३</a>
+        <a href="shloka4.html" aria-label="श्लोकः ४" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">४</a>
+        <a href="shloka5.html" aria-label="श्लोकः ५" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">५</a>
+        <a href="shloka6.html" aria-label="श्लोकः ६" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">६</a>
+        <a href="shloka7.html" aria-label="श्लोकः ७" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">७</a>
+        <a href="shloka8.html" aria-label="श्लोकः ८" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">८</a>
+        <a href="shloka9.html" aria-label="श्लोकः ९" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९</a>
+        <a href="shloka10.html" aria-label="श्लोकः १०" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१०</a>
     </div>
+
+    <h3 class="shloka-group-title">श्लोकाः ११ - २०</h3>
+    <div class="shloka-grid grid grid-cols-5 md:grid-cols-10 gap-3">
+        <a href="shloka11.html" aria-label="श्लोकः ११" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">११</a>
+        <a href="shloka12.html" aria-label="श्लोकः १२" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१२</a>
+        <a href="shloka13.html" aria-label="श्लोकः १३" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१३</a>
+        <a href="shloka14.html" aria-label="श्लोकः १४" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१४</a>
+        <a href="shloka15.html" aria-label="श्लोकः १५" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१५</a>
+        <a href="shloka16.html" aria-label="श्लोकः १६" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१६</a>
+        <a href="shloka17.html" aria-label="श्लोकः १७" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१७</a>
+        <a href="shloka18.html" aria-label="श्लोकः १८" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१८</a>
+        <a href="shloka19.html" aria-label="श्लोकः १९" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१९</a>
+        <a href="shloka20.html" aria-label="श्लोकः २०" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">२०</a>
+    </div>
+    
+    <h3 class="shloka-group-title">श्लोकाः ९१ - १००</h3>
+    <div class="shloka-grid grid grid-cols-5 md:grid-cols-10 gap-3">
+        <a href="shloka91.html" aria-label="श्लोकः ९१" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">९१</a>
+        <a href="shloka100.html" aria-label="श्लोकः १००" class="flex items-center justify-center aspect-square bg-gray-50 rounded-lg border border-gray-200 font-semibold text-lg transition-all duration-200 hover-custom">१००</a>
+    </div>
+
 </div>
 
 <footer class="bg-[#333] text-white text-center p-4 mt-8">
