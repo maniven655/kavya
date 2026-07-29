@@ -4,6 +4,14 @@ game.js
 
 Game logic.
 
+Supports:
+- Parasmaipada only
+- Ātmanepada only
+- Both Parasmaipada and Ātmanepada
+
+If both paradigms exist, the user's answers must belong
+entirely to one paradigm. Mixed paradigms are rejected.
+
 ===========================================================
 */
 
@@ -64,10 +72,14 @@ function newQuestion() {
 
 /*
 -----------------------------------------------------------
-Return the correct nine forms.
+Return available paradigms.
+
+parasmaipada -> a...
+ātmanepada   -> p...
+
 -----------------------------------------------------------
 */
-function getCorrectForms() {
+function getAvailableParadigms() {
 
     const baseindex = state.currentDhatu.baseindex;
 
@@ -83,23 +95,33 @@ function getCorrectForms() {
 
     }
 
-    // Try the selected key first.
-    // Example: alat
+    const parasmaiKey = "a" + lakara.substring(1);
+    const atmaneKey = "p" + lakara.substring(1);
 
-    let formString = dhatuForms[lakara];
+    const result = {};
 
-    // If not found, try the alternate key.
-    // Example: alat -> plat
+    if (dhatuForms[parasmaiKey]) {
 
-    if (!formString) {
-
-        const alternateLakara = "p" + lakara.substring(1);
-
-        formString = dhatuForms[alternateLakara];
+        result.parasmaipada =
+            dhatuForms[parasmaiKey]
+                .split(";")
+                .map(f => normalizeForm(f));
 
     }
 
-    if (!formString) {
+    if (dhatuForms[atmaneKey]) {
+
+        result.atmanepada =
+            dhatuForms[atmaneKey]
+                .split(";")
+                .map(f => normalizeForm(f));
+
+    }
+
+    if (
+        !result.parasmaipada &&
+        !result.atmanepada
+    ) {
 
         throw new Error(
             "No forms found for lakara " + lakara
@@ -107,16 +129,14 @@ function getCorrectForms() {
 
     }
 
-    return formString
-        .split(";")
-        .map(f => normalizeForm(f));
+    return result;
 
 }
 
 
 /*
 -----------------------------------------------------------
-Check one answer.
+Check one answer against one paradigm.
 -----------------------------------------------------------
 */
 function isCorrect(userAnswer, correctAnswer) {
@@ -134,6 +154,46 @@ function isCorrect(userAnswer, correctAnswer) {
 
 /*
 -----------------------------------------------------------
+Evaluate an entire paradigm.
+
+Returns
+
+{
+    score,
+    matches
+}
+
+-----------------------------------------------------------
+*/
+function evaluateParadigm(userAnswers, correctAnswers) {
+
+    let score = 0;
+
+    const matches = [];
+
+    for (let i = 0; i < 9; i++) {
+
+        const ok = isCorrect(
+            userAnswers[i],
+            correctAnswers[i]
+        );
+
+        matches.push(ok);
+
+        if (ok) {
+            score++;
+        }
+
+    }
+
+    return {
+        score,
+        matches
+    };
+
+}
+/*
+-----------------------------------------------------------
 Evaluate all answers.
 -----------------------------------------------------------
 */
@@ -141,57 +201,180 @@ function evaluateAnswers() {
 
     const userAnswers = getUserAnswers();
 
-    const correctAnswers = getCorrectForms();
+    const paradigms = getAvailableParadigms();
 
-    console.log("====================================");
-    console.log("Current Dhatu :", state.currentDhatu.dhatu);
-    console.log("Base Index    :", state.currentDhatu.baseindex);
-    console.log("Lakara        :", getSelectedLakara());
-    console.log("Correct Forms :", correctAnswers);
+    const hasParasmaipada =
+        paradigms.parasmaipada !== undefined;
 
-    let score = 0;
+    const hasAtmanepada =
+        paradigms.atmanepada !== undefined;
 
-    for (let i = 0; i < 9; i++) {
+    let chosen = null;
+    let result = null;
 
-        console.log("------------------------------------");
-        console.log("Cell", i);
+    /*
+    -------------------------------------------------------
+    Only Parasmaipada exists.
+    -------------------------------------------------------
+    */
+    if (
+        hasParasmaipada &&
+        !hasAtmanepada
+    ) {
 
-        console.log(
-            "User    :",
-            JSON.stringify(userAnswers[i])
-        );
+        chosen = paradigms.parasmaipada;
 
-        console.log(
-            "Correct :",
-            JSON.stringify(correctAnswers[i])
-        );
-
-        const correct = isCorrect(
-            userAnswers[i],
-            correctAnswers[i]
-        );
-
-        console.log(
-            "Match   :",
-            correct
-        );
-
-        if (correct) {
-            score++;
-        }
-
-        markAnswer(
-            i,
-            correct,
-            correctAnswers[i]
+        result = evaluateParadigm(
+            userAnswers,
+            chosen
         );
 
     }
 
-    console.log("Score :", score);
+    /*
+    -------------------------------------------------------
+    Only Ātmanepada exists.
+    -------------------------------------------------------
+    */
+    else if (
+        hasAtmanepada &&
+        !hasParasmaipada
+    ) {
 
-    state.score = score;
+        chosen = paradigms.atmanepada;
 
-    updateScore(score);
+        result = evaluateParadigm(
+            userAnswers,
+            chosen
+        );
+
+    }
+
+    /*
+    -------------------------------------------------------
+    Both paradigms exist.
+
+    User must answer entirely in one paradigm.
+    -------------------------------------------------------
+    */
+    else {
+
+        const parasmai =
+            evaluateParadigm(
+                userAnswers,
+                paradigms.parasmaipada
+            );
+
+        const atmane =
+            evaluateParadigm(
+                userAnswers,
+                paradigms.atmanepada
+            );
+
+        /*
+        Perfect Parasmaipada
+        */
+        if (parasmai.score === 9) {
+
+            chosen = paradigms.parasmaipada;
+
+            result = parasmai;
+
+        }
+
+        /*
+        Perfect Ātmanepada
+        */
+        else if (atmane.score === 9) {
+
+            chosen = paradigms.atmanepada;
+
+            result = atmane;
+
+        }
+
+        /*
+        Mixed paradigm.
+
+        Reject the whole table.
+        */
+        else {
+
+            chosen = paradigms.parasmaipada;
+
+            result = {
+
+                score: 0,
+
+                matches: new Array(9).fill(false)
+
+            };
+
+        }
+
+    }
+
+    console.log("====================================");
+    console.log(
+        "Current Dhatu :",
+        state.currentDhatu.dhatu
+    );
+    console.log(
+        "Base Index    :",
+        state.currentDhatu.baseindex
+    );
+    console.log(
+        "Lakara        :",
+        getSelectedLakara()
+    );
+
+    for (let i = 0; i < 9; i++) {
+
+        markAnswer(
+            i,
+            result.matches[i],
+            chosen[i]
+        );
+
+    }
+
+    state.score = result.score;
+
+    updateScore(result.score);
+
+}
+/*
+-----------------------------------------------------------
+(Optional helper)
+
+If you want tooltips to display BOTH paradigms when both
+exist, use this helper instead of passing a single answer
+to markAnswer().
+
+Not required for validation; only for better tooltips.
+-----------------------------------------------------------
+*/
+function getTooltipAnswer(index) {
+
+    const paradigms = getAvailableParadigms();
+
+    const p = paradigms.parasmaipada;
+    const a = paradigms.atmanepada;
+
+    if (p && a) {
+
+        if (p[index] === a[index]) {
+            return p[index];
+        }
+
+        return p[index] + "  |  " + a[index];
+
+    }
+
+    if (p) {
+        return p[index];
+    }
+
+    return a[index];
 
 }
