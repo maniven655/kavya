@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="sa">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>धातुरूप-अभ्यासः</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>धातुरूप-अभ्यासः</h1>
+
+    </header>
+
+
+    <!-- ==========================
+         Dhatu Information
+    =========================== -->
+
+    <section class="info-panel">
+
+        <table class="info-table">
+
+            <tr>
+                <th>धातुः</th>
+                <td id="dhatu">Loading...</td>
+            </tr>
+
+            <tr>
+                <th>अर्थः</th>
+                <td id="artha"></td>
+            </tr>
+
+            <tr>
+                <th>गणः</th>
+                <td id="gana"></td>
+            </tr>
+
+            <tr>
+                <th>पदम्</th>
+                <td id="pada"></td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <!-- ==========================
+         Controls
+    =========================== -->
+
+    <section class="controls">
+
+        <div class="control">
+
+            <label for="prayoga">प्रयोगः</label>
+
+            <select id="prayoga">
+
+                <option value="kartari">
+                    कर्तरि
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="control">
+
+            <label for="lakara">लकारः</label>
+
+            <select id="lakara">
+
+                <option value="alat">लट्</option>
+
+                <option value="alit">लिट्</option>
+
+                <option value="alut">लुट्</option>
+
+                <option value="alrut">लृट्</option>
+
+                <option value="alot">लोट्</option>
+
+                <option value="alang">लङ्</option>
+
+                <option value="avidhiling">विधिलिङ्</option>
+
+                <option value="aashirling">आशीर्लिङ्</option>
+
+                <option value="alung">लुङ्</option>
+
+                <option value="alrung">लृङ्</option>
+
+            </select>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         Verb Table
+    =========================== -->
+
+    <section>
+
+        <table id="verbTable" class="verb-table">
+
+            <thead>
+
+            <tr>
+
+                <th></th>
+
+                <th>एकवचन</th>
+
+                <th>द्विवचन</th>
+
+                <th>बहुवचन</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <th>प्रथम</th>
+
+                <td><input id="c0" type="text"></td>
+
+                <td><input id="c1" type="text"></td>
+
+                <td><input id="c2" type="text"></td>
+
+            </tr>
+
+            <tr>
+
+                <th>मध्यम</th>
+
+                <td><input id="c3" type="text"></td>
+
+                <td><input id="c4" type="text"></td>
+
+                <td><input id="c5" type="text"></td>
+
+            </tr>
+
+            <tr>
+
+                <th>उत्तम</th>
+
+                <td><input id="c6" type="text"></td>
+
+                <td><input id="c7" type="text"></td>
+
+                <td><input id="c8" type="text"></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- ==========================
+         Buttons
+    =========================== -->
+
+    <section class="buttons">
+
+        <button id="submitButton">
+
+            Submit
+
+        </button>
+
+        <button id="clearButton">
+
+            Clear
+
+        </button>
+
+        <button id="nextButton">
+
+            New Question
+
+        </button>
+
+    </section>
+
+
+    <!-- ==========================
+         Score
+    =========================== -->
+
+    <section class="score-panel">
+
+        <strong>
+
+            Score :
+
+        </strong>
+
+        <span id="score">
+
+            0 / 9
+
+        </span>
+
+    </section>
+
+
+</div>
+
+
+<!-- =====================================
+     JavaScript Files
+====================================== -->
+
+<script src="js/loader.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/game.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
