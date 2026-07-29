@@ -209,110 +209,7 @@ function evaluateAnswers() {
     const hasAtmanepada =
         paradigms.atmanepada !== undefined;
 
-    let chosen = null;
-    let result = null;
-
-    /*
-    -------------------------------------------------------
-    Only Parasmaipada exists.
-    -------------------------------------------------------
-    */
-    if (
-        hasParasmaipada &&
-        !hasAtmanepada
-    ) {
-
-        chosen = paradigms.parasmaipada;
-
-        result = evaluateParadigm(
-            userAnswers,
-            chosen
-        );
-
-    }
-
-    /*
-    -------------------------------------------------------
-    Only Ātmanepada exists.
-    -------------------------------------------------------
-    */
-    else if (
-        hasAtmanepada &&
-        !hasParasmaipada
-    ) {
-
-        chosen = paradigms.atmanepada;
-
-        result = evaluateParadigm(
-            userAnswers,
-            chosen
-        );
-
-    }
-
-    /*
-    -------------------------------------------------------
-    Both paradigms exist.
-
-    User must answer entirely in one paradigm.
-    -------------------------------------------------------
-    */
-    else {
-
-        const parasmai =
-            evaluateParadigm(
-                userAnswers,
-                paradigms.parasmaipada
-            );
-
-        const atmane =
-            evaluateParadigm(
-                userAnswers,
-                paradigms.atmanepada
-            );
-
-        /*
-        Perfect Parasmaipada
-        */
-        if (parasmai.score === 9) {
-
-            chosen = paradigms.parasmaipada;
-
-            result = parasmai;
-
-        }
-
-        /*
-        Perfect Ātmanepada
-        */
-        else if (atmane.score === 9) {
-
-            chosen = paradigms.atmanepada;
-
-            result = atmane;
-
-        }
-
-        /*
-        Mixed paradigm.
-
-        Reject the whole table.
-        */
-        else {
-
-            chosen = paradigms.parasmaipada;
-
-            result = {
-
-                score: 0,
-
-                matches: new Array(9).fill(false)
-
-            };
-
-        }
-
-    }
+    let score = 0;
 
     console.log("====================================");
     console.log(
@@ -328,19 +225,114 @@ function evaluateAnswers() {
         getSelectedLakara()
     );
 
-    for (let i = 0; i < 9; i++) {
+    /*
+    -------------------------------------------------------
+    Only Parasmaipada exists.
+    -------------------------------------------------------
+    */
+    if (
+        hasParasmaipada &&
+        !hasAtmanepada
+    ) {
 
-        markAnswer(
-            i,
-            result.matches[i],
-            chosen[i]
-        );
+        for (let i = 0; i < 9; i++) {
+
+            const correct = isCorrect(
+                userAnswers[i],
+                paradigms.parasmaipada[i]
+            );
+
+            if (correct) {
+                score++;
+            }
+
+            markAnswer(
+                i,
+                correct,
+                paradigms.parasmaipada[i]
+            );
+
+        }
 
     }
 
-    state.score = result.score;
+    /*
+    -------------------------------------------------------
+    Only Ātmanepada exists.
+    -------------------------------------------------------
+    */
+    else if (
+        hasAtmanepada &&
+        !hasParasmaipada
+    ) {
 
-    updateScore(result.score);
+        for (let i = 0; i < 9; i++) {
+
+            const correct = isCorrect(
+                userAnswers[i],
+                paradigms.atmanepada[i]
+            );
+
+            if (correct) {
+                score++;
+            }
+
+            markAnswer(
+                i,
+                correct,
+                paradigms.atmanepada[i]
+            );
+
+        }
+
+    }
+
+    /*
+    -------------------------------------------------------
+    Both paradigms exist.
+
+    Accept either form independently.
+    -------------------------------------------------------
+    */
+    else {
+
+        for (let i = 0; i < 9; i++) {
+
+            const correctParasmaipada =
+                isCorrect(
+                    userAnswers[i],
+                    paradigms.parasmaipada[i]
+                );
+
+            const correctAtmanepada =
+                isCorrect(
+                    userAnswers[i],
+                    paradigms.atmanepada[i]
+                );
+
+            const correct =
+                correctParasmaipada ||
+                correctAtmanepada;
+
+            if (correct) {
+                score++;
+            }
+
+            markAnswer(
+                i,
+                correct,
+                paradigms.parasmaipada[i] +
+                " | " +
+                paradigms.atmanepada[i]
+            );
+
+        }
+
+    }
+
+    state.score = score;
+
+    updateScore(score);
 
 }
 /*
